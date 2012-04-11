@@ -13,11 +13,6 @@ BEGIN
   WHERE id = node;
   IF mode = 'PROMOTE' THEN
     BEGIN
-      DELETE FROM users
-      WHERE group_id = node;
-      UPDATE router
-        SET group_id = null
-      WHERE group_id = node;
       DELETE FROM groups
       WHERE id = node;
       UPDATE groups
